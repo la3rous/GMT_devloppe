@@ -1,0 +1,671 @@
+/* ========================================
+   PAGE VEHICULE
+======================================== */
+
+.vehicle-detail-page {
+  min-height: 100vh;
+
+  padding: 35px 0 90px;
+
+  background: var(--bg);
+
+  color: var(--ink);
+}
+
+
+.vehicle-detail-container {
+  width: min(1320px, calc(100% - 110px));
+
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   RETOUR
+======================================== */
+
+.back-catalogue {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 35px;
+
+  color: var(--muted);
+
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  transition: color 0.3s ease;
+}
+
+.back-catalogue:hover {
+  color: var(--accent-ink);
+}
+
+
+/* ========================================
+   CONTENU PRINCIPAL
+======================================== */
+
+.vehicle-detail {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(380px, 0.85fr);
+
+  gap: 60px;
+
+  align-items: start;
+}
+
+
+/* ========================================
+   IMAGE
+======================================== */
+
+.vehicle-image-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 530px;
+
+  overflow: hidden;
+
+  border: 1px solid color-mix(in srgb, var(--info) 40%, transparent);
+  border-radius: 35px;
+
+  background: var(--info-bg);
+}
+
+
+.vehicle-image-wrapper img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.vehicle-detail-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--info-bg);
+  color: var(--info);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+/* Badge catégorie */
+
+.vehicle-category {
+  position: absolute;
+
+  top: 22px;
+  left: 22px;
+
+  z-index: 2;
+
+  padding: 8px 16px;
+
+  border: 1px solid color-mix(in srgb, var(--info) 40%, transparent);
+  border-radius: 25px;
+
+  background: var(--info-bg);
+
+  color: var(--ink);
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* ========================================
+   INFORMATIONS
+======================================== */
+
+.vehicle-info {
+  min-width: 0;
+}
+
+
+.vehicle-brand {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--accent-ink);
+
+  font-size: 18px;
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+}
+
+
+.vehicle-info h1 {
+  margin: 0 0 18px;
+
+  color: var(--ink);
+
+  font-size: clamp(55px, 6vw, 82px);
+
+  line-height: 0.95;
+
+  font-weight: 800;
+
+  letter-spacing: -3px;
+}
+
+
+/* ========================================
+   DISPONIBILITE
+======================================== */
+
+.vehicle-status {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 32px;
+
+  color: var(--ink);
+
+  font-size: 17px;
+  font-weight: 600;
+}
+
+
+.status-icon {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid color-mix(in srgb, var(--success) 40%, transparent);
+  border-radius: 50%;
+
+  color: var(--success);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* ========================================
+   PRIX
+======================================== */
+
+.price-box {
+  padding: 32px;
+
+  border: 1px solid color-mix(in srgb, var(--info) 40%, transparent);
+  border-radius: 30px;
+
+  background: var(--bg-2);
+}
+
+
+.price-title {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+}
+
+
+.price {
+  display: flex;
+  align-items: baseline;
+
+  gap: 7px;
+
+  margin-bottom: 28px;
+}
+
+
+.price strong {
+  color: var(--ink);
+
+  font-size: 52px;
+  line-height: 1;
+
+  font-weight: 800;
+}
+
+
+.currency {
+  color: var(--accent-ink);
+
+  font-size: 25px;
+  font-weight: 800;
+}
+
+
+.per-day {
+  color: var(--muted);
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+/* Bouton devis */
+
+.detail-quote-button {
+  width: 100%;
+  min-height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 32px;
+
+  background: var(--accent);
+
+  color: var(--ink);
+
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.detail-quote-button:hover {
+  background: var(--accent-2);
+
+  transform: translateY(-2px);
+}
+
+
+/* ========================================
+   FICHE TECHNIQUE
+======================================== */
+
+.technical-box {
+  margin-top: 30px;
+
+  padding: 30px;
+
+  border: 1px solid color-mix(in srgb, var(--info) 40%, transparent);
+  border-radius: 30px;
+
+  background: var(--bg-2);
+}
+
+
+.technical-box h2,
+.description-box h2 {
+  margin: 0 0 22px;
+
+  color: var(--ink);
+
+  font-size: 19px;
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+
+.technical-row {
+  min-height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-bottom: 1px solid color-mix(in srgb, var(--info) 40%, transparent);
+
+  color: var(--muted);
+
+  font-size: 16px;
+}
+
+
+.technical-row:last-child {
+  border-bottom: none;
+}
+
+
+.technical-row > span {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.technical-row strong {
+  color: var(--ink);
+
+  text-align: right;
+
+  font-size: 15px;
+}
+
+
+.tech-icon {
+  color: var(--accent-ink);
+
+  font-size: 16px;
+}
+
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.description-box {
+  margin-top: 30px;
+
+  padding: 30px;
+
+  border: 1px solid color-mix(in srgb, var(--info) 40%, transparent);
+  border-radius: 30px;
+
+  background: var(--bg-2);
+}
+
+
+.description-box p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   AVANTAGES
+======================================== */
+
+.vehicle-benefits {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+
+  margin-top: 30px;
+}
+
+
+.benefit {
+  min-height: 65px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 18px;
+
+  border: 1px solid color-mix(in srgb, var(--info) 40%, transparent);
+  border-radius: 25px;
+
+  background: var(--bg-2);
+
+  color: var(--ink);
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+.benefit-icon {
+  color: var(--accent-ink);
+
+  font-size: 22px;
+}
+
+
+/* ========================================
+   VEHICULE INTROUVABLE
+======================================== */
+
+.vehicle-not-found {
+  min-height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+
+  background: var(--bg);
+
+  color: var(--ink);
+}
+
+
+.vehicle-not-found a {
+  color: var(--accent-ink);
+
+  text-decoration: none;
+}
+
+
+/* ========================================
+   TABLETTE
+======================================== */
+
+@media (max-width: 1050px) {
+
+  .vehicle-detail-container {
+    width: min(100% - 60px, 900px);
+  }
+
+
+  .vehicle-detail {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+
+  .vehicle-image-wrapper {
+    height: 500px;
+  }
+
+
+  .vehicle-info h1 {
+    font-size: 65px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+
+  .vehicle-detail-page {
+    padding: 25px 0 60px;
+  }
+
+
+  .vehicle-detail-container {
+    width: calc(100% - 30px);
+  }
+
+
+  .back-catalogue {
+    margin-bottom: 22px;
+
+    font-size: 14px;
+  }
+
+
+  .vehicle-detail {
+    gap: 25px;
+  }
+
+
+  /* IMAGE */
+
+  .vehicle-image-wrapper {
+    height: 300px;
+
+    border-radius: 25px;
+  }
+
+
+  .vehicle-category {
+    top: 15px;
+    left: 15px;
+
+    padding: 7px 12px;
+
+    font-size: 12px;
+  }
+
+
+  /* TITRE */
+
+  .vehicle-brand {
+    font-size: 15px;
+  }
+
+
+  .vehicle-info h1 {
+    margin-bottom: 15px;
+
+    font-size: 52px;
+
+    letter-spacing: -2px;
+  }
+
+
+  /* STATUS */
+
+  .vehicle-status {
+    margin-bottom: 22px;
+
+    font-size: 15px;
+  }
+
+
+  /* BOXES */
+
+  .price-box,
+  .technical-box,
+  .description-box {
+    padding: 22px;
+
+    border-radius: 24px;
+  }
+
+
+  /* PRIX */
+
+  .price strong {
+    font-size: 42px;
+  }
+
+
+  .currency {
+    font-size: 21px;
+  }
+
+
+  .per-day {
+    font-size: 15px;
+  }
+
+
+  /* TECHNIQUE */
+
+  .technical-box h2,
+  .description-box h2 {
+    font-size: 17px;
+  }
+
+
+  .technical-row {
+    min-height: 52px;
+
+    font-size: 14px;
+  }
+
+
+  .technical-row strong {
+    font-size: 13px;
+  }
+
+
+  /* AVANTAGES */
+
+  .vehicle-benefits {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ========================================
+   TRES PETIT ECRAN
+======================================== */
+
+@media (max-width: 400px) {
+
+  .vehicle-detail-container {
+    width: calc(100% - 20px);
+  }
+
+
+  .vehicle-image-wrapper {
+    height: 250px;
+  }
+
+
+  .vehicle-info h1 {
+    font-size: 44px;
+  }
+
+
+  .price strong {
+    font-size: 36px;
+  }
+
+
+  .technical-row {
+    gap: 10px;
+  }
+
+
+  .technical-row strong {
+    max-width: 45%;
+  }
+
+}

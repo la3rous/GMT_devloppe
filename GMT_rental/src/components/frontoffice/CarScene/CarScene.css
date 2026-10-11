@@ -1,0 +1,2 @@
+.car-scene { isolation: isolate; }
+.car-scene canvas { touch-action: pan-y; }

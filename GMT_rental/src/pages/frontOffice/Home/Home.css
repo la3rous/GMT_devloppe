@@ -1,0 +1,111 @@
+.hero--lux {
+  --gold: var(--accent);
+  --gold-light: var(--accent-2);
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: clamp(760px, calc(100svh - 92px), 940px);
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  padding: 52px 24px 0;
+  color: var(--ink);
+  background: radial-gradient(ellipse at 50% 75%, color-mix(in srgb, var(--accent) 12%, var(--bg)) 0%, var(--bg-2) 39%, var(--bg) 76%);
+}
+
+.hero--lux::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bg) 18%, transparent), transparent 56%, var(--bg) 100%);
+}
+
+.hero-ambience { position: absolute; z-index: -1; inset: 0; overflow: hidden; pointer-events: none; }
+.hero-glow { position: absolute; width: 46vw; height: 34vw; border-radius: 50%; filter: blur(90px); opacity: .16; animation: luxe-drift 17s ease-in-out infinite alternate; }
+.hero-glow--gold { top: 31%; left: 28%; background: var(--accent); }
+.hero-glow--shadow { top: 44%; right: -18%; background: var(--bg); animation-delay: -8s; opacity: .22; }
+.hero-grid { position: absolute; inset: 46% -35% -43%; opacity: .22; transform: perspective(420px) rotateX(64deg); transform-origin: top center; background-image: linear-gradient(var(--gold-soft) 1px, transparent 1px), linear-gradient(90deg, var(--gold-soft) 1px, transparent 1px); background-size: 64px 52px; mask-image: linear-gradient(to bottom, black, transparent 83%); }
+.hero-orbit { position: absolute; left: 50%; top: 72%; width: min(92vw, 1660px); height: 260px; border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); border-radius: 50%; transform: translate(-50%, -50%) rotate(-4deg); box-shadow: 0 0 22px var(--gold-soft), inset 0 0 20px var(--gold-soft); }
+.hero-orbit--inner { width: min(77vw, 1400px); height: 190px; border-color: color-mix(in srgb, var(--accent-2) 32%, transparent); transform: translate(-50%, -50%) rotate(3deg); }
+.hero-mega-word { position: absolute; top: 46%; left: 50%; color: transparent; -webkit-text-stroke: 1px var(--mega-outline); font-family: "Bebas Neue", sans-serif; font-size: min(31vw, 440px); line-height: .8; letter-spacing: .04em; transform: translate(-50%, -50%); animation: luxe-breathe 8s ease-in-out infinite alternate; }
+.hero-particle { position: absolute; width: 3px; height: 3px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 10px 2px var(--gold-soft); animation: luxe-float 7s ease-in-out infinite alternate; }
+.hero-particle--one { top: 28%; left: 15%; }.hero-particle--two { top: 39%; right: 14%; animation-delay: -2s; }.hero-particle--three { top: 56%; left: 29%; animation-delay: -4s; }
+
+.hero-copy { position: relative; z-index: 2; width: min(100%, 1120px); text-align: center; }
+.hero-badge { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 23px; padding: 10px 18px; border: 1px solid var(--stroke); border-radius: 999px; background: var(--glass); color: var(--muted); font-size: 14px; backdrop-filter: blur(16px); }
+.hero-badge span { width: 8px; height: 8px; border-radius: 50%; background: var(--success); box-shadow: 0 0 12px color-mix(in srgb, var(--success) 65%, transparent); }
+.hero-content h1, .hero--lux h1 { max-width: 1100px; margin: 0 auto 14px; color: var(--ink); font-family: "Space Grotesk", sans-serif; font-size: clamp(42px, 5.2vw, 82px); font-weight: 700; line-height: 1.02; letter-spacing: -.055em; }
+.hero--lux h1 span { color: var(--accent-ink); background: linear-gradient(115deg, var(--accent), var(--accent-2) 54%, var(--accent)); background-clip: text; -webkit-text-fill-color: transparent; }
+.hero--lux .hero-description { max-width: 850px; margin: 0 auto 22px; color: var(--muted); font-size: clamp(15px, 1.45vw, 21px); line-height: 1.55; }
+.hero--lux .hero-button-primary { display: inline-flex; align-items: center; gap: 13px; height: 54px; padding: 0 25px; border: 0; border-radius: 999px; background: var(--grad); box-shadow: 0 10px 34px var(--gold-soft); color: var(--btn-ink); font-size: 15px; font-weight: 700; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
+.hero--lux .hero-button-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px color-mix(in srgb, var(--accent) 22%, transparent); }
+.hero--lux .hero-button-primary:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 4px; }
+.hero--lux .hero-button-primary span { font-size: 19px; }
+
+.hero-car-stage { position: absolute; z-index: 1; inset: 25% 0 0; }
+.car-scene { position: absolute; inset: 0; }
+.car-scene canvas { display: block; width: 100% !important; height: 100% !important; }
+.car-scene-caption { position: absolute; right: 4%; bottom: 12%; color: var(--accent-ink); font-size: 9px; letter-spacing: .05em; }
+.car-scene-caption a { color: inherit; text-underline-offset: 2px; }
+.car-fallback { position: absolute; inset: 13% 15% 10%; display: grid; place-items: center; overflow: hidden; border-radius: 50%; background: radial-gradient(ellipse, var(--gold-soft), transparent 66%); }
+.car-fallback img { width: 100%; height: 100%; object-fit: contain; filter: brightness(.75) saturate(.7); }
+.car-fallback span { position: absolute; bottom: 8%; color: var(--accent-ink); font-size: 10px; letter-spacing: .2em; }
+.spec-card { position: absolute; z-index: 2; min-width: 145px; padding: 15px 18px; border: 1px solid var(--stroke); border-radius: 17px; background: var(--glass); box-shadow: var(--shadow); backdrop-filter: blur(18px); animation: luxe-float 6s ease-in-out infinite alternate; }
+.spec-card-label { display: block; margin-bottom: 7px; color: var(--muted); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
+.spec-card-value { color: var(--ink); font-family: "Space Grotesk", sans-serif; font-size: 24px; font-weight: 700; }
+.spec-card-value small { margin-left: 6px; color: var(--gold-light); font-family: Inter, sans-serif; font-size: 11px; font-weight: 500; }
+.spec-card--comfort { top: 42%; left: 7.5%; }.spec-card--interior { bottom: 27%; left: 11%; animation-delay: -2s; }.spec-card--driver { top: 38%; right: 7.5%; animation-delay: -1s; }.spec-card--energy { bottom: 29%; right: 11%; animation-delay: -3s; }
+
+.hero--lux + .vehicle-selector { width: min(90%, 1420px); min-height: 86px; margin: -14px auto 0; padding: 14px 18px 14px 28px; gap: 22px; border: 1px solid var(--stroke); border-radius: 25px; background: var(--glass); box-shadow: var(--shadow); backdrop-filter: blur(20px); }
+.hero--lux + .vehicle-selector .selector-title { width: 245px; color: var(--muted); font-size: 11px; letter-spacing: .14em; }
+.hero--lux + .vehicle-selector select { min-width: 0; border: 1px solid var(--stroke); border-radius: 12px; background: var(--glass); color: var(--ink); outline: none; }
+.hero--lux + .vehicle-selector select:focus-visible { border-color: var(--gold); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
+.hero--lux + .vehicle-selector .vehicle-selector-reserve { flex: 0 0 auto; border-radius: 13px; padding: 16px 25px; background: var(--grad); color: var(--btn-ink); }
+.hero--lux + .vehicle-selector .vehicle-selector-reserve:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 3px; }
+
+.lux-marquee { overflow: hidden; padding: 25px 0 18px; border-bottom: 1px solid var(--stroke); background: var(--bg-2); }
+.lux-marquee-track { display: flex; width: max-content; animation: lux-marquee 42s linear infinite; }
+.lux-marquee-group { display: flex; align-items: center; gap: clamp(25px, 4vw, 70px); padding-right: clamp(25px, 4vw, 70px); color: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: .25em; text-transform: uppercase; white-space: nowrap; }
+.lux-marquee-group span { display: inline-flex; align-items: center; gap: clamp(25px, 4vw, 70px); }
+.lux-marquee-group b { color: var(--gold); font-size: 14px; }
+
+@keyframes luxe-drift { to { transform: translate3d(8%, -7%, 0) scale(1.06); } }
+@keyframes luxe-breathe { to { opacity: .55; transform: translate(-50%, -52%) scale(1.025); } }
+@keyframes luxe-float { to { transform: translateY(-8px); } }
+@keyframes lux-marquee { to { transform: translateX(-50%); } }
+
+@media (max-width: 1100px) {
+  .hero--lux { min-height: 760px; }
+  .hero-car-stage { inset: 34% 0 0; }
+  .spec-card { display: none; }
+  .hero-orbit { top: 75%; height: 190px; }
+  .hero--lux + .vehicle-selector { display: grid; grid-template-columns: 1fr 1fr; width: calc(100% - 40px); margin-top: -22px; padding: 18px; }
+  .hero--lux + .vehicle-selector .selector-title { width: auto; grid-column: 1 / -1; }
+  .hero--lux + .vehicle-selector select { width: 100%; }
+  .hero--lux + .vehicle-selector .vehicle-selector-reserve { width: 100%; }
+}
+
+@media (max-width: 640px) {
+  .hero--lux { min-height: 700px; padding: 38px 20px 0; }
+  .hero-badge { margin-bottom: 18px; padding: 9px 13px; font-size: 11px; }
+  .hero--lux h1 { font-size: clamp(39px, 11vw, 58px); }
+  .hero--lux .hero-description { max-width: 440px; margin-bottom: 19px; font-size: 14px; }
+  .hero--lux .hero-button-primary { height: 48px; padding: 0 19px; font-size: 13px; }
+  .hero-car-stage { inset: 42% -14% 1%; }
+  .hero-mega-word { top: 59%; font-size: 42vw; }
+  .hero-grid { inset: 56% -55% -25%; }
+  .hero-orbit { top: 80%; width: 125vw; height: 130px; }
+  .hero-orbit--inner { width: 105vw; height: 100px; }
+  .car-scene-caption { right: 15%; bottom: 8%; font-size: 8px; }
+  .hero--lux + .vehicle-selector { grid-template-columns: 1fr 1fr; width: calc(100% - 28px); margin-top: -8px; gap: 11px; padding: 15px; border-radius: 19px; }
+  .hero--lux + .vehicle-selector .selector-title { font-size: 10px; }
+  .hero--lux + .vehicle-selector select { padding: 13px 10px; font-size: 12px; }
+  .hero--lux + .vehicle-selector .vehicle-selector-reserve { grid-column: 1 / -1; padding: 14px; }
+  .lux-marquee-group { font-size: 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-glow, .hero-mega-word, .hero-particle, .spec-card, .lux-marquee-track { animation: none; }
+}

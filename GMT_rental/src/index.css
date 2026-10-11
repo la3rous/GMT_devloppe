@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: 320px;
+  background-color: var(--bg);
+}
+
+body {
+  font-family: "Inter Variable", Inter, Arial, sans-serif;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}

@@ -1,0 +1,10 @@
+Model: 2008 Mercedes-Benz C63 AMG
+Author: Ddiaz Design (https://sketchfab.com/ddiaz-design)
+Source: https://sketchfab.com/3d-models/2008-mercedes-benz-c63-amg-8f541d1d07b545799a20217c555a3948
+Embedded asset license: CC BY-NC-SA 4.0
+License: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+The GLB metadata identifies the asset as non-commercial. Do not use or distribute
+this model on a commercial website without separate permission or a commercial
+license from its rights holder. If alternate rights were obtained, retain proof
+of that license with the project.

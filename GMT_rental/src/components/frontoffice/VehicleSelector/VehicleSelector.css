@@ -1,0 +1,69 @@
+.vehicle-selector {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  /* plus d'espace avec les boutons du Hero */
+  margin: -40px 35px 0;
+
+  padding: 10px 25px;
+  min-height: 80px;
+
+  border-radius: 30px;
+
+  background: var(--info-bg);
+  backdrop-filter: blur(10px);
+}
+
+.selector-title {
+  width: 240px;
+
+  color: var(--muted);
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.vehicle-selector select {
+  flex: 1;
+
+  padding: 15px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--ink);
+
+  font-size: 16px;
+}
+
+.vehicle-selector select option {
+  background: var(--info-bg);
+  color: var(--ink);
+}
+
+.vehicle-selector-reserve {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+
+  border-radius: 30px;
+
+  padding: 16px 35px;
+
+  background: var(--accent);
+
+  color: var(--ink);
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  text-decoration: none;
+}

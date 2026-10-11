@@ -1,0 +1,229 @@
+:root, :root[data-theme="dark"] {
+  --bg: #05060a;
+  --bg-2: #0b0d12;
+  --ink: #f5f6f8;
+  --muted: #9aa1b0;
+  --accent: #d6ad60;
+  --accent-2: #f3d9a0;
+  --accent-ink: #d6ad60;
+  --grad: linear-gradient(135deg, #c9a052, #e6c27a 55%, #f6e2b3);
+  --glass: rgba(255, 255, 255, .055);
+  --stroke: rgba(255, 255, 255, .12);
+  --success: #35e08a;
+  --danger: #ff6b6b;
+  --warning: #f3b95f;
+  --info: var(--muted);
+  --radius: 16px;
+  --radius-lg: 24px;
+  --shadow: 0 30px 80px rgba(0, 0, 0, .55);
+  --shadow-color: rgba(0,0,0,.55);
+  --overlay: rgba(0,0,0,.68);
+  --skeleton-base: #111216;
+  --skeleton-highlight: #1b1c22;
+  --btn-ink: #1a1306;
+  --scene-fill: #262321;
+  --scene-paint: #151619;
+  --gold-soft: rgba(214,173,96,.15);
+  --blue-soft: rgba(0,0,0,.08);
+  --mega-outline: rgba(255,255,255,.11);
+  --success-bg: #17382e;
+  --danger-bg: #361c28;
+  --warning-bg: #3b2e16;
+  --info-bg: #111216;
+  --neutral-bg: #111216;
+  --atmosphere: radial-gradient(1200px 700px at 50% 60%, rgba(214,173,96,.14), transparent 62%), radial-gradient(900px 600px at 10% 90%, rgba(0,0,0,.08), transparent 60%);
+  color-scheme: dark;
+  font-family: "Inter Variable", Inter, Arial, sans-serif;
+}
+
+:root[data-theme="light"] {
+  --bg: #faf7f0;
+  --bg-2: #f1ece1;
+  --ink: #14120d;
+  --muted: #6b6455;
+  --accent: #b8892f;
+  --accent-2: #c9a052;
+  --accent-ink: #8a6212;
+  --grad: linear-gradient(135deg,#c9a052,#e6c27a 55%,#f6e2b3);
+  --glass: rgba(20,18,13,.04);
+  --stroke: rgba(20,18,13,.12);
+  --shadow: 0 20px 50px rgba(60,45,10,.14);
+  --shadow-color: rgba(60,45,10,.14);
+  --overlay: rgba(20,18,13,.35);
+  --skeleton-base: #f1ece1;
+  --skeleton-highlight: #faf7f0;
+  --btn-ink: #1a1306;
+  --scene-fill: #d8d1c5;
+  --scene-paint: #151619;
+  --gold-soft: rgba(184,137,47,.12);
+  --blue-soft: rgba(80,110,255,.06);
+  --mega-outline: rgba(20,18,13,.14);
+  --success: #17935a;
+  --danger: #c93a3a;
+  --warning: #a8700f;
+  --info: #2e6caa;
+  --success-bg: rgba(23,147,90,.12);
+  --danger-bg: rgba(201,58,58,.1);
+  --warning-bg: rgba(168,112,15,.12);
+  --info-bg: rgba(46,108,170,.1);
+  --neutral-bg: rgba(20,18,13,.06);
+  --atmosphere: radial-gradient(1200px 700px at 50% 60%, rgba(214,173,96,.22), transparent 62%), radial-gradient(900px 600px at 10% 90%, rgba(80,110,255,.06), transparent 60%);
+  color-scheme: light;
+}
+
+html { min-width: 320px; background: var(--bg); scroll-behavior: smooth; color-scheme: inherit; }
+body {
+  min-width: 320px;
+  background: var(--atmosphere), var(--bg);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: "Inter Variable", Inter, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color-scheme: inherit;
+  transition: background-color 250ms ease, color 250ms ease, border-color 250ms ease;
+}
+
+::selection { background: color-mix(in srgb, var(--accent) 34%, transparent); color: var(--ink); }
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { border: 2px solid var(--bg); border-radius: 9px; background: var(--stroke); }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+body :is(h1, h2, h3, h4, h5, h6) { font-family: "Space Grotesk", Inter, sans-serif; }
+a { color: inherit; }
+a:hover { text-decoration-color: var(--accent); }
+.glass { border: 1px solid var(--stroke); border-radius: var(--radius); background: var(--glass); box-shadow: var(--shadow); backdrop-filter: blur(18px) saturate(140%); }
+.label { color: var(--muted); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+.grad-text { background: var(--grad); background-clip: text; color: transparent; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+:where(button, a, input, select, textarea, [tabindex]):focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; }
+button:disabled, input:disabled, select:disabled, textarea:disabled { cursor: not-allowed; opacity: .52; }
+body :is(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+  border-color: var(--stroke);
+  background-color: var(--glass);
+  color: var(--ink);
+  color-scheme: inherit;
+}
+body :is(input:not([type="checkbox"]):not([type="radio"]), textarea)::placeholder { color: var(--muted); opacity: 1; }
+body :is(input:not([type="checkbox"]):not([type="radio"]), select, textarea):focus { border-color: var(--accent) !important; box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 16%, transparent); }
+input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
+[class*="skeleton"] { border-radius: 8px; background: linear-gradient(100deg, var(--skeleton-base) 30%, var(--skeleton-highlight) 48%, var(--skeleton-base) 66%); background-size: 220% 100%; animation: theme-shimmer 1.5s ease-in-out infinite; }
+@keyframes theme-shimmer { to { background-position-x: -220%; } }
+
+/* Shared public-site surfaces */
+:is(.catalog-card, .car-card, .value-card, .faq-item, .faq-cta, .contact-form, .contact-info-card, .quote-form, .confirmation-summary, .technical-box, .description-box, .price-box, .benefit, .catalog-filters, .catalog-currency, .search-box, .advanced-filters, .contact-info, .vehicle-info-card) {
+  border-color: var(--stroke);
+  background-color: var(--glass);
+  box-shadow: var(--shadow);
+}
+:is(.catalog-card, .car-card, .value-card, .faq-item, .faq-cta, .contact-form, .contact-info-card, .quote-form, .confirmation-summary, .technical-box, .description-box, .price-box, .benefit, .catalog-filters, .catalog-currency, .search-box, .advanced-filters, .contact-info, .vehicle-info-card) :is(h1,h2,h3,h4,strong) { color: var(--ink); }
+:is(.section-label, .advantages-label, .about-label, .faq-label, .contact-label, .catalog-label, .vehicle-detail-label, .quote-label, .quote-step-label) { color: var(--accent-ink) !important; }
+:is(.car-price strong, .catalog-price, .vehicle-price, .currency-active, .section-label, .advantages-label, .about-label, .faq-label, .contact-label) { color: var(--accent-ink); }
+:is(.details-button, .about-primary-button, .about-cta-button, .contact-submit, .quote-submit, .quote-next, .quote-primary-button, .confirmation-primary, .currency-active, .catalog-currency button.active, .category-button.active, .catalog-filter.active, .catalog-quote-button, .faq-category.active, .faq-btn-primary, .cta-primary, .vehicle-detail-actions .quote-button, .vehicle-selector-reserve, .admin-login-submit, .verify-submit-button) {
+  border-color: var(--accent) !important;
+  background: var(--grad) !important;
+  color: var(--btn-ink) !important;
+}
+:is(.catalog-card, .car-card) img { transition: transform .25s ease; }
+:is(.catalog-card, .car-card):hover img { transform: scale(1.025); }
+:is(.details-button, .about-primary-button, .about-cta-button, .contact-submit, .quote-submit, .quote-next, .quote-primary-button, .confirmation-primary, .catalog-quote-button, .faq-btn-primary, .cta-primary, .vehicle-selector-reserve, .admin-login-submit, .verify-submit-button):hover:not(:disabled) { box-shadow: 0 10px 28px color-mix(in srgb, var(--accent) 22%, transparent); transform: translateY(-1px); }
+.faq-btn-ghost, .quote-back, .confirmation-secondary, .admin-button:not(.primary):not(.danger), .secondary-button, .ghost-button { border-color: var(--stroke); background: var(--glass); color: var(--ink); }
+:is(.faq-btn-ghost, .quote-back, .confirmation-secondary, .admin-button:not(.primary):not(.danger), .secondary-button, .ghost-button):hover { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
+:is(.catalog-intro h1, .about-hero-content h1, .faq-hero h1, .contact-hero h1, .vehicle-info h1, .quote-intro h1) { color: var(--ink); }
+
+:root[data-theme="light"] :is(.faq-page, .faq-badge, .faq-search-wrapper, .faq-item, .faq-empty, .faq-cta, .quote-vehicle-banner) {
+  border-color: var(--stroke) !important;
+  background-color: var(--glass) !important;
+  color: var(--ink) !important;
+  box-shadow: var(--shadow);
+}
+:root[data-theme="light"] :is(.faq-hero h1, .faq-empty h2, .faq-cta h2, .faq-question, .quote-vehicle-banner-info h3, .quote-vehicle-price strong) { color: var(--ink) !important; }
+:root[data-theme="light"] :is(.faq-hero p, .faq-answer p, .faq-empty p, .faq-cta p, .faq-result-count, .faq-category-title, .quote-vehicle-category, .quote-vehicle-price span) { color: var(--muted) !important; }
+
+/* Shared tables, overlays and administrator shell */
+table { border-color: var(--stroke); }
+th { color: var(--muted); }
+td { border-color: var(--stroke); }
+tr:hover td { background-color: var(--glass); }
+:is([role="dialog"], .user-modal, .rental-history-modal, .admin-profile-menu, .mobile-menu, .notification-panel) { border-color: var(--stroke); background-color: var(--bg-2); color: var(--ink); }
+:is(.user-modal-overlay, .rental-history-overlay, .modal-overlay) { background: var(--overlay); backdrop-filter: blur(6px); }
+.admin-shell {
+  --adm-bg: var(--bg);
+  --adm-panel: var(--glass);
+  --adm-panel-2: var(--bg-2);
+  --adm-border: var(--stroke);
+  --adm-text: var(--ink);
+  --adm-muted: var(--muted);
+  --adm-accent: var(--accent);
+  background: var(--bg);
+  color: var(--ink);
+}
+:is(.admin-sidebar, .admin-topbar) { border-color: var(--stroke); background-color: var(--bg-2); }
+:is(.admin-card, .admin-stat-card, .dashboard-stat-card, .dashboard-grid > .admin-card) { border-color: var(--stroke); background: var(--glass); }
+:is(.admin-field input, .admin-field select, .admin-field textarea, .admin-toolbar input, .admin-toolbar select) { border-color: var(--stroke); background: var(--glass); }
+.dashboard-demo-notice { padding: 10px 14px; margin: 0 0 14px; border: 1px solid color-mix(in srgb, var(--warning) 35%, transparent); border-radius: 8px; background: var(--warning-bg); color: var(--warning); font-size: 12px; }
+:is(.admin-button.primary, .admin-primary-button, .rental-history-form-row-bottom > button) { border-color: var(--accent); background: var(--grad); color: var(--btn-ink); }
+:is(.admin-nav-link:hover, .admin-nav-link.active, .admin-profile-item:hover:not(.is-unavailable)) { background: color-mix(in srgb, var(--accent) 11%, transparent); color: var(--ink); }
+:is(.admin-stat-icon, .admin-rank-number, .admin-avatar, .account-avatar) { color: var(--accent-ink); }
+.gmt-footer { border-top-color: var(--stroke); background: var(--bg-2); color: var(--ink); }
+.footer-logo, .footer-column h3 { font-family: "Space Grotesk", sans-serif; }
+.footer-logo-icon { background: var(--grad); color: var(--btn-ink); }
+.footer-column > a:hover, .footer-legal-links a:hover, .footer-contact-item:hover { color: var(--accent-2); }
+.footer-contact-item svg { color: var(--accent-ink); }
+.theme-toggle { color: var(--accent-ink); background: var(--glass); border-color: var(--stroke); }
+
+/* Shared route surfaces follow the active palette. */
+:root[data-theme="light"] :is(header, .mobile-menu, .admin-profile-menu, .notification-panel, .user-modal, .rental-history-modal) { background-color: var(--bg-2); color: var(--ink); }
+:root[data-theme="light"] :is(.header-right nav, .theme-toggle, .menu-button, .mobile-menu nav a, .admin-nav-link, .admin-profile-item, .admin-button:not(.primary):not(.danger), .admin-card, .admin-stat-card, .dashboard-stat-card, .dashboard-caveat, .admin-field input, .admin-field select, .admin-field textarea, .admin-toolbar input, .admin-toolbar select, .admin-login-card, .account-settings-card, .account-form, .account-meta, .help-card, .activity-search, .activity-filter-form select, .activity-date input, .notification-item, .notification-empty, .catalog-card, .car-card, .value-card, .faq-item, .faq-cta, .contact-form, .contact-info-card, .quote-form, .confirmation-summary, .technical-box, .description-box, .price-box, .benefit, .catalog-filters, .catalog-currency, .search-box, .advanced-filters, .contact-info, .vehicle-info-card, .vehicle-selector, .spec-card) { border-color: var(--stroke); background-color: var(--glass); color: var(--ink); box-shadow: var(--shadow); }
+:root[data-theme="light"] :is(.admin-nav-link.active, .admin-nav-link:hover, .admin-profile-item:hover, .mobile-menu nav a.active, .mobile-menu nav a:hover, .header-right nav a.active) { background: color-mix(in srgb, var(--accent) 13%, var(--bg-2)); color: var(--ink); }
+:root[data-theme="light"] :is(.admin-page-head h1, .admin-card h2, .admin-table td, .admin-profile-details strong, .admin-profile-item, .admin-form, .account-meta dd, .account-setting-row strong, .account-session-info strong, .dashboard-rank-main strong, .dashboard-ranking li>b, .quote-form, .contact-form, .catalog-card, .car-card, .vehicle-info-card, .vehicle-info h1) { color: var(--ink); }
+:root[data-theme="light"] :is(.admin-stat-icon, .admin-rank-number, .admin-avatar, .account-avatar, .footer-contact-item svg, .hero--lux .spec-card-value small, .lux-marquee-group b, .hero--lux h1 span, .section-label, .about-label, .contact-label, .catalog-label, .vehicle-detail-label, .quote-label) { color: var(--accent-ink); }
+:root[data-theme="light"] :is(.admin-badge, .admin-badge-neutral, .dashboard-chart-track, .dashboard-rank-number, .dashboard-rank-meter, .admin-profile-trigger, .password-input-wrap, .account-security-note, .account-note, .admin-users-search, .user-actions button, .notification-item, .dashboard-caveat) { background-color: var(--bg-2); color: var(--ink); border-color: var(--stroke); }
+:root[data-theme="light"] :is(.admin-primary-button, .admin-button.primary, .admin-login-submit, .hero--lux .hero-button-primary, .vehicle-selector-reserve, .details-button, .about-primary-button, .about-cta-button, .contact-submit, .quote-submit, .quote-next, .quote-primary-button, .confirmation-primary, .catalog-quote-button, .faq-btn-primary, .cta-primary, .verify-submit-button) { color: var(--btn-ink) !important; }
+:root[data-theme="light"] .hero--lux { background: var(--atmosphere), var(--bg); }
+:root[data-theme="light"] .hero--lux::after { background: linear-gradient(180deg, color-mix(in srgb, var(--bg) 8%, transparent), transparent 56%, var(--bg) 100%); }
+:root[data-theme="light"] .hero-mega-word { -webkit-text-stroke-color: rgba(20,18,13,.14); }
+:root[data-theme="light"] .lux-marquee { background: var(--bg-2); border-color: var(--stroke); }
+:root[data-theme="light"] :is(.hero-glow--shadow, .hero-glow--gold) { opacity: .07; }
+:root[data-theme="light"] .hero-grid { opacity: .09; }
+:root[data-theme="light"] .hero-orbit { opacity: .55; }
+:root[data-theme="light"] .dashboard-filters input { color-scheme: light; }
+:root[data-theme="light"] :is(.user-modal-overlay, .rental-history-overlay, .modal-overlay) { background: color-mix(in srgb, var(--ink) 35%, transparent); }
+:root[data-theme="light"] :is(.admin-error, .admin-badge-danger, .user-status.inactive) { background-color: var(--danger-bg); border-color: color-mix(in srgb, var(--danger) 35%, transparent); }
+:root[data-theme="light"] :is(.admin-success, .admin-badge-success, .user-status.active) { background-color: var(--success-bg); border-color: color-mix(in srgb, var(--success) 35%, transparent); }
+:root[data-theme="light"] :is(.admin-badge-warning, .user-status.warning, .user-status.pending) { background-color: var(--warning-bg); }
+:root[data-theme="light"] :is(.admin-badge-info, .notification-item) { background-color: var(--info-bg); }
+:root[data-theme="light"] :is(.admin-badge-neutral, .admin-badge) { background-color: var(--neutral-bg); }
+:root[data-theme="light"] .admin-shell { --adm-panel: var(--glass); --adm-panel-2: var(--bg-2); --adm-accent: var(--accent-ink); }
+:root[data-theme="light"] :is(.admin-brand-mark, .admin-stat-icon, .account-section-icon, .admin-primary-button, .admin-button.primary, .admin-login-mark) { color: var(--btn-ink); }
+:root[data-theme="light"] :is(.admin-nav-link.active, .admin-button, .admin-primary-button, .admin-login-submit, .user-actions button, .admin-logout, .admin-profile-trigger, .notification-trigger) { border-color: var(--stroke); }
+:root[data-theme="light"] :is(.admin-nav-link, .admin-profile-item, .admin-logout, .admin-profile-trigger, .notification-trigger, .admin-table td, .admin-table a, .admin-field label, .admin-stat, .admin-status-list, .admin-page-head, .account-page, .settings-page, .help-page, .activity-page) { color: var(--ink); }
+:root[data-theme="light"] :is(.admin-muted, .admin-page-head p, .admin-stat span, .admin-profile-email, .admin-profile-details > span, .admin-table th, .admin-field label, .dashboard-note, .dashboard-caveat, .dashboard-chart-column small, .dashboard-legend span) { color: var(--muted); }
+:root[data-theme="light"] :is(.admin-badge-success, .admin-success, .user-status.active) { color: var(--success); }
+:root[data-theme="light"] :is(.admin-badge-danger, .admin-error, .user-status.inactive) { color: var(--danger); }
+:root[data-theme="light"] :is(.admin-badge-warning, .user-status.warning, .user-status.pending) { color: var(--warning); }
+:root[data-theme="light"] .dashboard-demo-notice { border-color: color-mix(in srgb, var(--warning) 35%, transparent); background: var(--warning-bg); color: var(--warning); }
+:root[data-theme="light"] :is(.about-page, .catalog-page, .contact-page, .faq-page, .quote-page, .quote-confirmation, .vehicle-detail-page) { background-color: var(--bg); color: var(--ink); }
+:root[data-theme="light"] :is(.about-page, .catalog-page, .contact-page, .faq-page, .quote-page, .quote-confirmation, .vehicle-detail-page) :is(h1, h2, h3, h4, p, label, span, small, li, dt, dd, strong, b) { color: var(--ink); }
+:root[data-theme="light"] :is(.about-page, .catalog-page, .contact-page, .faq-page, .quote-page, .quote-confirmation, .vehicle-detail-page) :is(.about-label, .contact-label, .faq-label, .catalog-label, .vehicle-detail-label, .quote-label, .section-label, .advantages-label) { color: var(--accent-ink); }
+:root[data-theme="light"] :is(.catalog-filters, .catalog-currency, .search-box, .advanced-filters, .contact-form-card, .contact-info-card, .contact-map, .reassurance-card, .about-card, .about-value-card, .advantage-card, .cta-content, .quote-step-card, .quote-form-card, .confirmation-summary, .vehicle-info-card, .technical-box, .description-box, .price-box, .selected-vehicle-banner, .vehicle-selector, .vehicle-selector select, .catalog-card, .car-card, .quote-vehicle-banner) { border-color: var(--stroke); background-color: var(--glass); color: var(--ink); box-shadow: var(--shadow); }
+:root[data-theme="light"] :is(.contact-hero p, .contact-info-content p, .contact-reassurance, .about-hero-content p, .about-copy, .faq-answer p, .faq-hero p, .quote-description, .vehicle-description, .catalog-description, .car-description) { color: var(--muted); }
+:root[data-theme="light"] :is(.hero-badge, .spec-card, .car-scene-caption, .car-fallback span, .lux-marquee-group, .vehicle-selector, .selector-title, .vehicles-title p, .advantage-card p, .cta-content p, .footer-column a, .footer-legal-links a) { color: var(--muted); }
+:root[data-theme="light"] :is(.header-right nav, .mobile-menu, .admin-sidebar, .admin-topbar, .admin-profile-menu, .notification-panel, .notification-item) { background-color: var(--bg-2); }
+:root[data-theme="light"] :is(.theme-toggle, .menu-button) { background-color: var(--glass); color: var(--accent-ink); border-color: var(--stroke); }
+:root[data-theme="light"] .theme-toggle:hover { border-color: var(--accent); box-shadow: 0 0 18px color-mix(in srgb, var(--accent) 24%, transparent); }
+:root[data-theme="light"] .theme-toggle:focus-visible { outline-color: var(--accent); }
+:root[data-theme="light"] :is(.admin-stat-icon, .account-section-icon, .footer-contact-item svg, .faq-badge svg, .contact-info-icon, .advantage-icon, .vehicle-detail-label, .quote-vehicle-brand) { color: var(--accent-ink); }
+:root[data-theme="light"] :is(.catalog-price, .car-price strong, .vehicle-price, .quote-vehicle-price strong, .currency-active, .footer-column h3, .footer-logo) { color: var(--accent-ink); }
+:root[data-theme="light"] :is(.catalog-filters input, .catalog-filters select, .contact-form input, .contact-form select, .contact-form textarea, .quote-page input, .quote-page select, .quote-page textarea, .vehicle-detail-page input, .vehicle-detail-page select, .vehicle-detail-page textarea) { border-color: var(--stroke); background-color: var(--glass); color: var(--ink); color-scheme: light; }
+:root[data-theme="light"] :is(.about-page, .catalog-page, .contact-page, .faq-page, .quote-page, .quote-confirmation, .vehicle-detail-page) :is(a:not(.details-button):not(.quote-button):not(.faq-btn-primary):not(.cta-primary):not(.confirmation-primary), button:not(.details-button):not(.quote-button):not(.faq-btn-primary):not(.cta-primary):not(.confirmation-primary)) { color: var(--ink); }
+:root[data-theme="light"] body { background: var(--atmosphere), var(--bg); color: var(--ink); }
+:root[data-theme="light"] body :is(input, select, textarea) { color-scheme: light; }
+
+@media (max-width: 768px) {
+  html { scroll-behavior: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

@@ -1,0 +1,14 @@
+.quote-confirmation { min-height: calc(100vh - 76px); padding: 28px 20px 50px; background: var(--bg-2); color: var(--ink); text-align: center; }
+.quote-confirmation h1 { margin: 0; font-size: clamp(48px, 7vw, 76px); font-weight: 850; line-height: .95; letter-spacing: -2px; }
+.confirmation-message { margin: 28px auto 40px; color: var(--muted); font-size: 20px; line-height: 1.7; }
+.confirmation-summary { width: min(720px, 100%); box-sizing: border-box; margin: 0 auto; padding: 28px 30px; border: 1px solid color-mix(in srgb, var(--info) 40%, transparent); border-radius: 38px; background: var(--bg-2); text-align: left; }
+.confirmation-summary h2 { margin: 0 0 22px; font-size: 19px; text-transform: uppercase; letter-spacing: .5px; }
+.confirmation-summary dl { display: grid; gap: 16px; margin: 0; }
+.confirmation-summary dl div { display: flex; justify-content: space-between; gap: 20px; }
+.confirmation-summary dt { color: var(--muted); }
+.confirmation-summary dd { margin: 0; font-weight: 700; text-align: right; overflow-wrap: anywhere; }
+.confirmation-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-top: 40px; }
+.confirmation-actions a { display: inline-flex; min-height: 62px; align-items: center; justify-content: center; padding: 0 34px; border-radius: 99px; color: var(--ink); font-weight: 700; text-decoration: none; }
+.confirmation-primary { background: var(--accent); }
+.confirmation-secondary { border: 1px solid color-mix(in srgb, var(--info) 40%, transparent); background: var(--info-bg); }
+@media (max-width: 600px) { .quote-confirmation { padding: 36px 15px; } .confirmation-message { font-size: 17px; } .confirmation-summary { padding: 23px 20px; border-radius: 28px; } .confirmation-summary dl div { align-items: flex-start; } }
